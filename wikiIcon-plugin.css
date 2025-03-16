@@ -1,0 +1,100 @@
+
+  .wikipedia-link {
+    display: inline-flex;
+    position: relative;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    align-items: center;
+  }
+  
+  .wikipedia-icon {
+    width: 15px !important;
+    height: 15px !important;
+    border-radius: 50% !important;
+    border: 2px solid #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.2s ease;
+  }
+  
+  .wikipedia-link:hover .wikipedia-icon {
+    border-color: #007bff;
+  }
+  
+  .wikipedia-preview-container {
+    display: inline-flex;
+    position: relative;
+    vertical-align: middle; 
+    align-items: center;
+    margin: 0 5px
+  }
+  
+  .wikipedia-preview-box {
+    position: absolute;
+    bottom: -150px;
+    left: 220px;
+    transform: translateX(-50%);
+    width: 400px; 
+    height: 300px; 
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 9999;
+    overflow: hidden;
+
+    padding: 5px 22px;
+    box-sizing: border-box;
+    line-height: 1.7;
+    overflow-y: auto;
+  }
+
+  .wikipedia-preview-box:has(iframe) {
+    padding: 0; /* Remove padding if it has an iframe */
+    overflow-y: hidden;
+  }
+  
+
+  .wikipedia-preview-box h4 {
+    font-size: 1.7em;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border-color-subtle, #c8ccd1);
+  }
+  .wikipedia-preview-box img[src=""] {
+    display: none;
+  }
+
+  .loading{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .wikipedia-preview-container:hover .wikipedia-preview-box {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .wikipedia-iframe {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    margin: 0 !important;
+    background: transparent;
+    z-index: 100;
+  }
